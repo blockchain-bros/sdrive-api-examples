@@ -64,7 +64,7 @@ async function uploadVideo(
   //Sample result:
   /*
 	{	 
-	  "base": "https://shdw-drive.genesysgo.net/GYSM8Nk9kw7rYz5NbRht8Mh9K3KKRKJ86sThxVzyF4n1",
+	  "base": "",
 	  "playlist": "ayglugc8y4getrk39k2dl1cu.m3u8",
 	  "files": {
 	    "screenshots": [

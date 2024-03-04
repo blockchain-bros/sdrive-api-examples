@@ -19,11 +19,13 @@ async function uploadFile(fileStream, filename) {
     filename: filename,
     contentType: mimetype,
   });
-  formData.append("apikey", apikey);
 
   return await axios
     .post(base_url + "/upload", formData, {
-      headers: formData.getHeaders(), // Set headers from formData
+      headers: {
+        ...formData.getHeaders(),
+        Authorization: `Bearer ${apikey}`, // Send the API key as an auth bearer token
+      },
     })
     .catch((error) => {
       if (error.response) {
