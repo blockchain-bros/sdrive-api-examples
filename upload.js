@@ -16,7 +16,7 @@ async function uploadFile(fileStream, filename) {
 
   let mimetype = mime.lookup(path.extname(filename));
   formData.append("fileupload", fileStream, {
-    filename: filename,
+    filename: "not-a-pokemon-png",
     contentType: mimetype,
   });
   formData.append("network", "ipfs");
@@ -26,6 +26,7 @@ async function uploadFile(fileStream, filename) {
       headers: {
         ...formData.getHeaders(),
         Authorization: `Bearer ${apikey}`, // Send the API key as an auth bearer token
+	"x-filename": "images/not-a-pokemon.png"
       },
     })
     .catch((error) => {
